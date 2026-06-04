@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* ===== Caravela Data — Editorial Boutique ===== */
+@theme {
+  --color-paper: #fafaf7;
+  --color-surface: #ffffff;
+  --color-line: #ece9e2;
+  --color-line-strong: #ddd9cf;
+  --color-ink: #1c1b19;
+  --color-muted: #6b6862;
+  --color-faint: #9a958c;
+
+  --color-indigo: #3730a3;
+  --color-indigo-ink: #1e1b4b;
+  --color-indigo-soft: #eef0fb;
+  --color-coral: #fb7185;
+  --color-coral-soft: #fff1f3;
+  --color-sage: #3f8e7d;
+  --color-amber: #d9a441;
+  --color-rose: #e11d48;
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background-color: var(--color-indigo);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-indigo);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* Números com largura tabular (KPIs, eixos) */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Textura editorial: malha de pontos sutil */
+.bg-dotgrid {
+  background-image: radial-gradient(circle at center, rgba(28, 27, 25, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.bg-dotgrid-indigo {
+  background-image: radial-gradient(circle at center, rgba(55, 48, 163, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Filete editorial (linha fina com nó central) */
+.rule-editorial {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-line-strong) 18%, var(--color-line-strong) 82%, transparent);
+}
+
+/* ===== Animações ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes drawLine {
+  from { stroke-dashoffset: var(--len, 1000); }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes growUp {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-draw {
+  stroke-dasharray: var(--len, 1000);
+  animation: drawLine 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
+}
+.anim-grow {
+  transform-origin: bottom;
+  animation: growUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .anim-fade-up, .anim-draw, .anim-grow, .anim-floaty {
+    animation: none !important;
+  }
+}
