@@ -12,7 +12,7 @@ export function MarketStats() {
   return (
     <Section className="bg-indigo-ink text-white">
       <div className="max-w-2xl">
-        <Eyebrow className="text-coral [&_span]:bg-coral">O momento</Eyebrow>
+        <Eyebrow className="!text-coral">O momento</Eyebrow>
         <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           A maioria das PMEs ainda decide no escuro.
         </h2>

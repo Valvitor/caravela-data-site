@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "outline" | "ghost";
+type Variant = "primary" | "outline" | "ghost" | "white" | "ghostLight";
 type Size = "md" | "lg";
 
 const base =
@@ -11,6 +11,9 @@ const variants: Record<Variant, string> = {
   primary: "bg-indigo text-white hover:bg-indigo-ink",
   outline: "border border-line-strong bg-surface text-ink hover:border-indigo hover:text-indigo",
   ghost: "text-ink hover:text-indigo",
+  // para uso sobre fundo escuro/indigo
+  white: "bg-white text-indigo hover:bg-white/90",
+  ghostLight: "border border-white/30 text-white hover:bg-white/10",
 };
 
 const sizes: Record<Size, string> = {

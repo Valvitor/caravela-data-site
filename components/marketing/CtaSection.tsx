@@ -16,20 +16,10 @@ export function CtaSection() {
             sentido e o que ele resolveria primeiro.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button
-              href={brand.whatsappLink}
-              external
-              size="lg"
-              className="bg-white text-indigo hover:bg-white/90"
-            >
+            <Button href={brand.whatsappLink} external size="lg" variant="white">
               Falar no WhatsApp · {brand.whatsappDisplay}
             </Button>
-            <Button
-              href="/dashboards/contabilidade"
-              size="lg"
-              variant="ghost"
-              className="text-white hover:text-white/80"
-            >
+            <Button href="/dashboards/contabilidade" size="lg" variant="ghostLight">
               Ver os dashboards antes →
             </Button>
           </div>
