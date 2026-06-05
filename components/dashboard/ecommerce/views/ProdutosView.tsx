@@ -70,7 +70,7 @@ export function ProdutosView({ categoria }: { categoria: string }) {
           className="lg:col-span-2"
           summary="Rosca com a participação de cada categoria na receita."
         >
-          <DonutShare data={groupProdutos(filtrados, "categoria", "receita")} height={230} />
+          <DonutShare data={groupProdutos(filtrados, "categoria", "receita")} format="brl" height={230} />
         </ChartCard>
 
         <ChartCard

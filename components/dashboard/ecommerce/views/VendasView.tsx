@@ -34,7 +34,7 @@ export function VendasView({ periodo, canal }: { periodo: Periodo; canal: string
           className="lg:col-span-2"
           summary="Rosca com a participação de cada canal na receita."
         >
-          <DonutShare data={participacao} height={260} />
+          <DonutShare data={participacao} format="brl" height={260} />
         </ChartCard>
 
         <ChartCard

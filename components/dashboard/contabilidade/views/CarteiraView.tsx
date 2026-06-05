@@ -61,7 +61,7 @@ export function CarteiraView({ filtro, periodo }: { filtro: Filtro; periodo: Per
             className="lg:col-span-2"
             summary="Rosca com a receita por regime tributário."
           >
-            <DonutShare data={groupCategories(at, "regime", "honorario")} height={230} />
+            <DonutShare data={groupCategories(at, "regime", "honorario")} format="brl" height={230} />
           </ChartCard>
 
           <ChartCard
@@ -79,7 +79,7 @@ export function CarteiraView({ filtro, periodo }: { filtro: Filtro; periodo: Per
             className="lg:col-span-2"
             summary="Rosca com o número de clientes por porte."
           >
-            <DonutShare data={groupCategories(at, "porte", "count")} height={230} />
+            <DonutShare data={groupCategories(at, "porte", "count")} format="int" height={230} />
           </ChartCard>
 
           <ChartCard

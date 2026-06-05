@@ -59,7 +59,7 @@ export function FinanceiroView({
           className="lg:col-span-2"
           summary="Rosca com a participação de cada convênio no faturamento."
         >
-          <DonutShare data={fatConvenio} height={260} />
+          <DonutShare data={fatConvenio} format="brl" height={260} />
         </ChartCard>
 
         <ChartCard
