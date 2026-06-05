@@ -19,7 +19,7 @@ export function DataTable({ columns, rows }: { columns: Column[]; rows: Row[] })
               <th
                 key={c.key}
                 className={cn(
-                  "pb-2 text-xs font-semibold uppercase tracking-wide text-faint",
+                  "px-3 pb-2 text-xs font-semibold uppercase tracking-wide text-faint first:pl-0 last:pr-0",
                   c.align === "right" && "text-right",
                 )}
               >
@@ -39,7 +39,7 @@ export function DataTable({ columns, rows }: { columns: Column[]; rows: Row[] })
                   <td
                     key={c.key}
                     className={cn(
-                      "py-2.5",
+                      "px-3 py-2.5 first:pl-0 last:pr-0",
                       c.align === "right" ? "text-right" : "text-left",
                       isNum ? "tnum text-ink" : "text-muted",
                       c.key === columns[0].key && "font-medium text-ink",
