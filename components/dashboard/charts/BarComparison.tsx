@@ -31,7 +31,7 @@ export function BarComparison({
   horizontal?: boolean;
   highlightTop?: boolean;
 }) {
-  const max = Math.max(...data.map((d) => d.value));
+  const max = data.length ? Math.max(...data.map((d) => d.value)) : 0;
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
