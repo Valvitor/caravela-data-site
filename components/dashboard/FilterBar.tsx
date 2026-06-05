@@ -2,20 +2,24 @@
 
 import { SegmentedControl } from "@/components/ui/SegmentedControl";
 import { Select } from "@/components/ui/Select";
-import { periodos, opcoes, type Periodo, type Filtro } from "@/lib/contabilidade";
+import { periodos, type Periodo } from "@/lib/period";
+
+export interface SelectConfig {
+  key: string;
+  label: string;
+  value: string;
+  options: { value: string; label: string }[];
+  onChange: (v: string) => void;
+}
 
 export function FilterBar({
   periodo,
   onPeriodo,
-  filtro,
-  onFiltro,
-  show,
+  selects = [],
 }: {
   periodo: Periodo;
   onPeriodo: (p: Periodo) => void;
-  filtro: Filtro;
-  onFiltro: (key: keyof Filtro, value: string) => void;
-  show: (keyof Filtro)[];
+  selects?: SelectConfig[];
 }) {
   return (
     <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -23,15 +27,16 @@ export function FilterBar({
         <span className="text-xs font-medium uppercase tracking-wide text-faint">Período</span>
         <SegmentedControl options={periodos} value={periodo} onChange={onPeriodo} ariaLabel="Período" />
       </div>
-      {show.includes("gestor") && (
-        <Select id="f-gestor" label="Gestor" value={filtro.gestor} onChange={(v) => onFiltro("gestor", v)} options={opcoes("gestor")} />
-      )}
-      {show.includes("regime") && (
-        <Select id="f-regime" label="Regime" value={filtro.regime} onChange={(v) => onFiltro("regime", v)} options={opcoes("regime")} />
-      )}
-      {show.includes("segmento") && (
-        <Select id="f-segmento" label="Segmento" value={filtro.segmento} onChange={(v) => onFiltro("segmento", v)} options={opcoes("segmento")} />
-      )}
+      {selects.map((s) => (
+        <Select
+          key={s.key}
+          id={`f-${s.key}`}
+          label={s.label}
+          value={s.value}
+          options={s.options}
+          onChange={s.onChange}
+        />
+      ))}
     </div>
   );
 }

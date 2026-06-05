@@ -6,7 +6,7 @@ import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { DashboardTabs } from "@/components/dashboard/DashboardTabs";
 import { FilterBar } from "@/components/dashboard/FilterBar";
 import { client } from "@/data/contabilidade";
-import type { Filtro, Periodo } from "@/lib/contabilidade";
+import { opcoes, type Filtro, type Periodo } from "@/lib/contabilidade";
 import { VisaoGeralView } from "./views/VisaoGeralView";
 import { FinanceiroView } from "./views/FinanceiroView";
 import { CarteiraView } from "./views/CarteiraView";
@@ -57,19 +57,22 @@ export function ContabilidadeApp() {
   const show: (keyof Filtro)[] =
     aba === "carteira" ? ["gestor", "regime", "segmento"] : aba === "operacao" ? ["gestor"] : [];
 
+  const labels: Record<keyof Filtro, string> = { gestor: "Gestor", regime: "Regime", segmento: "Segmento" };
+  const selects = show.map((k) => ({
+    key: k,
+    label: labels[k],
+    value: filtro[k],
+    options: opcoes(k),
+    onChange: (v: string) => setParams({ [k]: v }),
+  }));
+
   return (
     <div className="space-y-6">
       <DashboardHeader client={client} />
 
       <div className="space-y-4">
         <DashboardTabs tabs={tabs} value={aba} onChange={(v) => setParams({ aba: v })} />
-        <FilterBar
-          periodo={periodo}
-          onPeriodo={(p) => setParams({ periodo: p })}
-          filtro={filtro}
-          onFiltro={(k, v) => setParams({ [k]: v })}
-          show={show}
-        />
+        <FilterBar periodo={periodo} onPeriodo={(p) => setParams({ periodo: p })} selects={selects} />
       </div>
 
       {aba === "visao-geral" && <VisaoGeralView periodo={periodo} />}

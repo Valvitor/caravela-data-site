@@ -1,4 +1,4 @@
-import type { Kpi, Category, Row } from "@/data/types";
+import type { Kpi, Category } from "@/data/types";
 import {
   type Cliente,
   clientes,
@@ -9,36 +9,21 @@ import {
   operacaoGestores,
   obrigacoesMensal,
 } from "@/data/contabilidade";
+import {
+  avgKey,
+  labelPeriodo,
+  monthsOf,
+  pctDelta,
+  periodos,
+  round1,
+  slicePeriod,
+  sumKey,
+  windows,
+  type Periodo,
+} from "./period";
 
-export type Periodo = "3m" | "6m" | "12m";
-
-export const periodos: { value: Periodo; label: string }[] = [
-  { value: "3m", label: "3 meses" },
-  { value: "6m", label: "6 meses" },
-  { value: "12m", label: "12 meses" },
-];
-
-export function monthsOf(p: Periodo): number {
-  return p === "3m" ? 3 : p === "6m" ? 6 : 12;
-}
-export function labelPeriodo(p: Periodo): string {
-  return `Últimos ${monthsOf(p)} meses`;
-}
-export function slicePeriod<T>(rows: T[], p: Periodo): T[] {
-  return rows.slice(-monthsOf(p));
-}
-
-const round1 = (n: number) => Math.round(n * 10) / 10;
-const sumKey = (rows: Row[], key: string) => rows.reduce((s, r) => s + (Number(r[key]) || 0), 0);
-const avgKey = (rows: Row[], key: string) => (rows.length ? sumKey(rows, key) / rows.length : 0);
-
-function windows<T>(rows: T[], n: number): { cur: T[]; prev: T[] } {
-  return { cur: rows.slice(-n), prev: rows.slice(-2 * n, -n) };
-}
-function pctDelta(cur: number, prev: number): number | undefined {
-  if (!prev) return undefined;
-  return round1(((cur - prev) / prev) * 100);
-}
+// Reexporta utilidades de período usadas por views/app/FilterBar de contabilidade.
+export { periodos, monthsOf, labelPeriodo, slicePeriod, type Periodo };
 
 /* ===== Filtros de clientes ===== */
 export interface Filtro {
