@@ -86,3 +86,44 @@ export const despesas: Category[] = [
   { name: "Marketing", value: 5 },
   { name: "Outros", value: 3 },
 ];
+
+/* ===== Aprofundamento ===== */
+
+/** Resultado por centro de custo (tabela) */
+export const centroCusto: Row[] = [
+  { centro: "Fiscal", receita: 64200, margem: 22 },
+  { centro: "Contábil", receita: 58100, margem: 19 },
+  { centro: "Dep. Pessoal", receita: 40800, margem: 15 },
+  { centro: "Consultoria", receita: 24300, margem: 31 },
+];
+
+/** Desempenho por gestor (tabela) */
+export const gestores: Row[] = [
+  { gestor: "Ana Souza", clientes: 41, receita: 56200, inad: 4.2 },
+  { gestor: "Bruno Lima", clientes: 36, receita: 48800, inad: 6.1 },
+  { gestor: "Carla Dias", clientes: 34, receita: 45100, inad: 5.0 },
+  { gestor: "Diego Alves", clientes: 31, receita: 37300, inad: 9.3 },
+];
+
+/** Carteira de clientes: novos vs cancelados */
+export const carteira: Row[] = [
+  { month: "Jul", novos: 6, cancelados: 2 },
+  { month: "Ago", novos: 8, cancelados: 3 },
+  { month: "Set", novos: 5, cancelados: 2 },
+  { month: "Out", novos: 7, cancelados: 4 },
+  { month: "Nov", novos: 9, cancelados: 2 },
+  { month: "Dez", novos: 6, cancelados: 3 },
+];
+
+export const carteiraSeries: SeriesDef[] = [
+  { key: "novos", name: "Novos", color: brand.series.sage },
+  { key: "cancelados", name: "Cancelados", color: brand.series.coral },
+];
+
+/** Mix de honorários por tipo de serviço (%) */
+export const mixHonorarios: Category[] = [
+  { name: "Contábil", value: 38 },
+  { name: "Fiscal", value: 30 },
+  { name: "Dep. Pessoal", value: 20 },
+  { name: "Consultoria", value: 12 },
+];

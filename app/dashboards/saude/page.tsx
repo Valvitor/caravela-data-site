@@ -6,6 +6,9 @@ import { LineMulti } from "@/components/dashboard/charts/LineMulti";
 import { AreaTrend } from "@/components/dashboard/charts/AreaTrend";
 import { BarComparison } from "@/components/dashboard/charts/BarComparison";
 import { DonutShare } from "@/components/dashboard/charts/DonutShare";
+import { FunnelChart } from "@/components/dashboard/charts/FunnelChart";
+import { DataTable } from "@/components/dashboard/DataTable";
+import { SectionDivider } from "@/components/dashboard/SectionDivider";
 import * as data from "@/data/saude";
 
 export const metadata: Metadata = {
@@ -81,6 +84,55 @@ export default function SaudeDashboard() {
           summary="Barras horizontais com a margem percentual por procedimento; clareamento e implante no topo."
         >
           <BarComparison data={data.margemProcedimento} format="pct" horizontal height={240} highlightTop />
+        </ChartCard>
+      </div>
+
+      <SectionDivider eyebrow="Aprofundamento" title="Profissionais, orçamentos e aquisição" />
+
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
+        <ChartCard
+          title="Produção por profissional"
+          subtitle="Receita gerada e no-show"
+          className="lg:col-span-3"
+          summary="Tabela por profissional com especialidade, produção em reais e taxa de no-show individual."
+        >
+          <DataTable
+            columns={[
+              { key: "profissional", label: "Profissional" },
+              { key: "especialidade", label: "Especialidade" },
+              { key: "producao", label: "Produção", format: "brl", align: "right" },
+              { key: "noshow", label: "No-show", format: "pct", align: "right" },
+            ]}
+            rows={data.producaoProfissional}
+          />
+        </ChartCard>
+
+        <ChartCard
+          title="Conversão de orçamentos"
+          subtitle="Do orçamento ao tratamento concluído"
+          className="lg:col-span-3"
+          summary="Funil de orçamentos: orçados, aprovados, iniciados e concluídos, com cerca de 44% de conversão final."
+        >
+          <FunnelChart data={data.conversaoOrcamentos} />
+        </ChartCard>
+
+        <ChartCard
+          title="Origem dos pacientes"
+          subtitle="Canais de aquisição"
+          className="lg:col-span-3"
+          summary="Rosca com a origem dos pacientes; indicação é o maior canal, seguido de Google."
+        >
+          <DonutShare data={data.origemPacientes} height={240} />
+        </ChartCard>
+
+        <ChartCard
+          title="Inadimplência mensal"
+          subtitle="Parcelas de tratamento em atraso (%)"
+          className="lg:col-span-3"
+          legend={data.inadimplenciaSeries}
+          summary="Área da taxa de inadimplência ao longo dos meses, em tendência de queda de 14% para 9%."
+        >
+          <AreaTrend data={data.inadimplenciaMensal} series={data.inadimplenciaSeries} format="pct" height={240} />
         </ChartCard>
       </div>
     </div>

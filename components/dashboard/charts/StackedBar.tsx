@@ -32,7 +32,7 @@ export function StackedBar({
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: 0 }} barCategoryGap="22%">
+        <BarChart data={data} margin={{ top: 14, right: 8, bottom: 0, left: 0 }} barCategoryGap="22%">
           <CartesianGrid stroke={GRID} vertical={false} />
           <XAxis dataKey={xKey} tick={TICK} axisLine={AXIS_LINE} tickLine={false} />
           <YAxis

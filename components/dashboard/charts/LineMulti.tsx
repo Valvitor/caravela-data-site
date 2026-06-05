@@ -35,7 +35,7 @@ export function LineMulti({
   return (
     <div style={{ height }} className="w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
+        <LineChart data={data} margin={{ top: 14, right: 8, bottom: 0, left: 0 }}>
           <CartesianGrid stroke={GRID} vertical={false} />
           <XAxis dataKey={xKey} tick={TICK} axisLine={AXIS_LINE} tickLine={false} />
           <YAxis

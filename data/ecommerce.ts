@@ -80,3 +80,53 @@ export const roasCanal: Category[] = [
   { name: "TikTok Ads", value: 16 },
   { name: "Orgânico", value: 13 },
 ];
+
+/* ===== Aprofundamento ===== */
+
+/** Receita realizada vs meta */
+export const receitaMeta: Row[] = [
+  { month: "Jul", realizado: 207000, meta: 200000 },
+  { month: "Ago", realizado: 219000, meta: 215000 },
+  { month: "Set", realizado: 229000, meta: 230000 },
+  { month: "Out", realizado: 239000, meta: 240000 },
+  { month: "Nov", realizado: 292000, meta: 270000 },
+  { month: "Dez", realizado: 312000, meta: 300000 },
+];
+
+export const receitaMetaSeries: SeriesDef[] = [
+  { key: "realizado", name: "Realizado", color: brand.series.indigo },
+  { key: "meta", name: "Meta", color: brand.series.slate },
+];
+
+/** Receita: clientes novos vs recorrentes (R$) */
+export const novosRecorrentes: Row[] = [
+  { month: "Jul", novos: 121000, recorrentes: 86000 },
+  { month: "Ago", novos: 128000, recorrentes: 91000 },
+  { month: "Set", novos: 132000, recorrentes: 97000 },
+  { month: "Out", novos: 136000, recorrentes: 103000 },
+  { month: "Nov", novos: 168000, recorrentes: 124000 },
+  { month: "Dez", novos: 174000, recorrentes: 138000 },
+];
+
+export const novosRecorrentesSeries: SeriesDef[] = [
+  { key: "recorrentes", name: "Recorrentes", color: brand.series.sage },
+  { key: "novos", name: "Novos", color: brand.series.indigo },
+];
+
+/** Cobertura de estoque por categoria (dias) */
+export const coberturaEstoque: Category[] = [
+  { name: "Eletrônicos", value: 64 },
+  { name: "Calçados", value: 51 },
+  { name: "Skincare", value: 38 },
+  { name: "Vestuário", value: 22 },
+  { name: "Acessórios", value: 18 },
+];
+
+/** Taxa de devolução por categoria (%) */
+export const devolucoes: Category[] = [
+  { name: "Vestuário", value: 12 },
+  { name: "Calçados", value: 9 },
+  { name: "Eletrônicos", value: 6 },
+  { name: "Acessórios", value: 4 },
+  { name: "Skincare", value: 3 },
+];

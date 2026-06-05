@@ -48,9 +48,14 @@ export function formatRatio(value: number): string {
 
 export type ValueFormat = "brl" | "brlCompact" | "pct" | "int" | "ratio";
 
-/** Formato curto para ticks de eixo (moeda vira compacta). */
+/** Formato curto para ticks de eixo: moeda vira "R$ 200k" / "R$ 1,2M" (uma linha só). */
 export function formatAxis(value: number, format: ValueFormat): string {
-  if (format === "brl" || format === "brlCompact") return formatBRLCompact(value);
+  if (format === "brl" || format === "brlCompact") {
+    const abs = Math.abs(value);
+    if (abs >= 1_000_000) return `R$ ${dec1.format(value / 1_000_000)}M`;
+    if (abs >= 1_000) return `R$ ${int.format(Math.round(value / 1000))}k`;
+    return `R$ ${int.format(value)}`;
+  }
   return formatValue(value, format);
 }
 

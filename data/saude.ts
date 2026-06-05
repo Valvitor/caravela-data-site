@@ -1,5 +1,5 @@
 import { brand } from "@/lib/brand";
-import type { Category, Kpi, Row, SeriesDef } from "./types";
+import type { Category, FunnelStep, Kpi, Row, SeriesDef } from "./types";
 
 export const client = {
   name: "Clínica Vértice",
@@ -85,3 +85,43 @@ export const receitaEspecialidade: Category[] = [
 
 /** Faixa de referência do no-show no setor (%) */
 export const noShowRef = { min: 15, max: 30 };
+
+/* ===== Aprofundamento ===== */
+
+/** Produção por profissional (tabela) */
+export const producaoProfissional: Row[] = [
+  { profissional: "Dr. Marcos", especialidade: "Implantes", producao: 62400, noshow: 9 },
+  { profissional: "Dra. Helena", especialidade: "Ortodontia", producao: 48100, noshow: 11 },
+  { profissional: "Dr. Rafael", especialidade: "Estética", producao: 35200, noshow: 14 },
+  { profissional: "Dra. Paula", especialidade: "Clínico geral", producao: 27800, noshow: 18 },
+];
+
+/** Conversão de orçamentos */
+export const conversaoOrcamentos: FunnelStep[] = [
+  { stage: "Orçados", value: 320 },
+  { stage: "Aprovados", value: 196 },
+  { stage: "Iniciados", value: 168 },
+  { stage: "Concluídos", value: 142 },
+];
+
+/** Origem dos pacientes (%) */
+export const origemPacientes: Category[] = [
+  { name: "Indicação", value: 42 },
+  { name: "Google", value: 24 },
+  { name: "Convênio", value: 18 },
+  { name: "Instagram", value: 16 },
+];
+
+/** Inadimplência mensal (%) */
+export const inadimplenciaMensal: Row[] = [
+  { month: "Jul", inad: 13.8 },
+  { month: "Ago", inad: 12.9 },
+  { month: "Set", inad: 11.7 },
+  { month: "Out", inad: 10.8 },
+  { month: "Nov", inad: 9.8 },
+  { month: "Dez", inad: 9.1 },
+];
+
+export const inadimplenciaSeries: SeriesDef[] = [
+  { key: "inad", name: "Inadimplência", color: brand.series.amber },
+];

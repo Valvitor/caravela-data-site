@@ -6,6 +6,8 @@ import { StackedBar } from "@/components/dashboard/charts/StackedBar";
 import { AreaTrend } from "@/components/dashboard/charts/AreaTrend";
 import { BarComparison } from "@/components/dashboard/charts/BarComparison";
 import { DonutShare } from "@/components/dashboard/charts/DonutShare";
+import { DataTable } from "@/components/dashboard/DataTable";
+import { SectionDivider } from "@/components/dashboard/SectionDivider";
 import * as data from "@/data/contabilidade";
 
 export const metadata: Metadata = {
@@ -77,6 +79,62 @@ export default function ContabilidadeDashboard() {
           summary="Rosca com a composição das despesas; pessoal é a maior fatia, seguido de impostos."
         >
           <DonutShare data={data.despesas} height={240} />
+        </ChartCard>
+      </div>
+
+      <SectionDivider eyebrow="Aprofundamento" title="Centros de custo, gestores e carteira" />
+
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
+        <ChartCard
+          title="Resultado por centro de custo"
+          subtitle="Receita e margem por área"
+          className="lg:col-span-3"
+          summary="Tabela com receita e margem por centro de custo: Fiscal, Contábil, Departamento Pessoal e Consultoria."
+        >
+          <DataTable
+            columns={[
+              { key: "centro", label: "Centro de custo" },
+              { key: "receita", label: "Receita", format: "brl", align: "right" },
+              { key: "margem", label: "Margem", format: "pct", align: "right" },
+            ]}
+            rows={data.centroCusto}
+          />
+        </ChartCard>
+
+        <ChartCard
+          title="Desempenho por gestor"
+          subtitle="Carteira, receita e inadimplência"
+          className="lg:col-span-3"
+          summary="Tabela por gestor com número de clientes, receita gerada e taxa de inadimplência da carteira."
+        >
+          <DataTable
+            columns={[
+              { key: "gestor", label: "Gestor" },
+              { key: "clientes", label: "Clientes", format: "int", align: "right" },
+              { key: "receita", label: "Receita", format: "brl", align: "right" },
+              { key: "inad", label: "Inadimpl.", format: "pct", align: "right" },
+            ]}
+            rows={data.gestores}
+          />
+        </ChartCard>
+
+        <ChartCard
+          title="Carteira de clientes"
+          subtitle="Novos vs. cancelados por mês"
+          className="lg:col-span-3"
+          legend={data.carteiraSeries}
+          summary="Barras de clientes novos versus cancelados nos últimos meses; entradas superam as saídas."
+        >
+          <StackedBar data={data.carteira} series={data.carteiraSeries} format="int" stacked={false} height={240} />
+        </ChartCard>
+
+        <ChartCard
+          title="Mix de honorários"
+          subtitle="Receita por tipo de serviço"
+          className="lg:col-span-3"
+          summary="Rosca com a participação de cada serviço na receita: contábil, fiscal, departamento pessoal e consultoria."
+        >
+          <DonutShare data={data.mixHonorarios} height={240} />
         </ChartCard>
       </div>
     </div>

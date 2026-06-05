@@ -7,6 +7,7 @@ import { StackedBar } from "@/components/dashboard/charts/StackedBar";
 import { BarComparison } from "@/components/dashboard/charts/BarComparison";
 import { DonutShare } from "@/components/dashboard/charts/DonutShare";
 import { FunnelChart } from "@/components/dashboard/charts/FunnelChart";
+import { SectionDivider } from "@/components/dashboard/SectionDivider";
 import * as data from "@/data/ecommerce";
 
 export const metadata: Metadata = {
@@ -76,6 +77,48 @@ export default function EcommerceDashboard() {
           summary="Rosca com a divisão do investimento de mídia entre Google, Meta, TikTok e orgânico."
         >
           <DonutShare data={data.roasCanal} height={240} />
+        </ChartCard>
+      </div>
+
+      <SectionDivider eyebrow="Aprofundamento" title="Meta, retenção e operação" />
+
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
+        <ChartCard
+          title="Receita vs. meta"
+          subtitle="Realizado contra o planejado"
+          className="lg:col-span-3"
+          legend={data.receitaMetaSeries}
+          summary="Barras de receita realizada versus meta por mês; o realizado supera a meta na maioria dos meses."
+        >
+          <StackedBar data={data.receitaMeta} series={data.receitaMetaSeries} format="brl" stacked={false} height={240} />
+        </ChartCard>
+
+        <ChartCard
+          title="Novos vs. recorrentes"
+          subtitle="Origem da receita"
+          className="lg:col-span-3"
+          legend={data.novosRecorrentesSeries}
+          summary="Barras empilhadas da receita vinda de clientes novos e recorrentes por mês."
+        >
+          <StackedBar data={data.novosRecorrentes} series={data.novosRecorrentesSeries} format="brl" height={240} />
+        </ChartCard>
+
+        <ChartCard
+          title="Cobertura de estoque"
+          subtitle="Dias de estoque por categoria"
+          className="lg:col-span-3"
+          summary="Barras horizontais com os dias de cobertura de estoque por categoria; eletrônicos têm a maior cobertura."
+        >
+          <BarComparison data={data.coberturaEstoque} format="int" horizontal height={240} />
+        </ChartCard>
+
+        <ChartCard
+          title="Taxa de devolução"
+          subtitle="Por categoria (%)"
+          className="lg:col-span-3"
+          summary="Barras da taxa de devolução por categoria; vestuário e calçados concentram as devoluções."
+        >
+          <BarComparison data={data.devolucoes} format="pct" height={240} highlightTop />
         </ChartCard>
       </div>
     </div>
