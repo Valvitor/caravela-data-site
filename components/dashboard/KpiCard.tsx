@@ -8,9 +8,9 @@ export function KpiCard({ kpi }: { kpi: Kpi }) {
   // bom = (subiu e subir é bom) OU (caiu e subir é ruim)
   const good = kpi.goodWhenUp ? up : !up;
   return (
-    <div className="rounded-2xl border border-line bg-surface p-5">
-      <p className="text-xs font-medium uppercase tracking-wide text-faint">{kpi.label}</p>
-      <p className="tnum mt-2 font-display text-3xl font-semibold text-ink">
+    <div className="rounded-2xl border border-line bg-surface p-4 sm:p-5">
+      <p className="text-[11px] font-medium uppercase tracking-wide text-faint sm:text-xs">{kpi.label}</p>
+      <p className="tnum mt-2 font-display text-xl font-semibold leading-tight text-ink sm:text-2xl lg:text-3xl">
         {formatValue(kpi.value, kpi.format)}
       </p>
       <div className="mt-2 flex items-center gap-2">
@@ -33,7 +33,7 @@ export function KpiCard({ kpi }: { kpi: Kpi }) {
 
 export function KpiGrid({ kpis }: { kpis: Kpi[] }) {
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
       {kpis.map((k) => (
         <KpiCard key={k.label} kpi={k} />
       ))}

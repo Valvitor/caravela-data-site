@@ -11,7 +11,7 @@ export default function DashboardsLayout({
   return (
     <div className="min-h-screen bg-paper">
       <header className="sticky top-0 z-40 border-b border-line bg-paper/85 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-3 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
             <Link
               href="/"
@@ -26,10 +26,10 @@ export default function DashboardsLayout({
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-6 py-8">{children}</main>
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">{children}</main>
 
       <footer className="border-t border-line">
-        <div className="mx-auto max-w-7xl px-6 py-6 text-xs text-muted">
+        <div className="mx-auto max-w-7xl px-4 py-6 text-xs text-muted sm:px-6">
           Painel de demonstração com dados fictícios, gerados apenas para ilustrar o produto. Em um
           projeto real, os dados são do próprio cliente, tratados conforme a LGPD (agregados,
           isolados por conta e com acesso controlado).{" "}

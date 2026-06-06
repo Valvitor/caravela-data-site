@@ -17,7 +17,7 @@ export function ChartCard({
   legend?: { name: string; color: string }[];
 }) {
   return (
-    <figure className={cn("rounded-2xl border border-line bg-surface p-5", className)}>
+    <figure className={cn("rounded-2xl border border-line bg-surface p-4 sm:p-5", className)}>
       <figcaption className="mb-4 flex items-start justify-between gap-4">
         <div>
           <h3 className="font-display text-base font-semibold text-ink">{title}</h3>
