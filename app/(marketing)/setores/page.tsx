@@ -15,7 +15,7 @@ export default function SetoresPage() {
       <PageHeader
         eyebrow="Setores"
         title="Especialização por nicho, do KPI ao conector."
-        lead="Cada setor tem suas métricas e seus sistemas. Comece pelo dashboard de exemplo do seu — todos com dados fictícios, só para mostrar o produto."
+        lead="Cada setor tem suas métricas e seus sistemas. Comece pelo dashboard de exemplo do seu setor. Todos têm dados fictícios, só para mostrar o produto."
       />
       <SectorCards />
       <CtaSection />

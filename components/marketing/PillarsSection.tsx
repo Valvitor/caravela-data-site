@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 const pillars = [
   {
     title: "White-label, sem licença por usuário",
-    body: "O painel leva a sua marca (ou a do seu cliente). A mensalidade é por painel, não por assento — toda a equipe acessa sem o custo escalar.",
+    body: "O painel leva a sua marca (ou a do seu cliente). A mensalidade é por painel, não por assento. Toda a equipe acessa sem o custo escalar.",
     big: true,
   },
   {
@@ -14,7 +14,7 @@ const pillars = [
   },
   {
     title: "Velocidade com Claude Code",
-    body: "IA aplicada acelera conectores, modelagem e interface — setup em dias, não semanas.",
+    body: "IA aplicada acelera conectores, modelagem e interface: setup em dias, não semanas.",
   },
   {
     title: "Especialização por setor",

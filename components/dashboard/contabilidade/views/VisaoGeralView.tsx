@@ -21,7 +21,7 @@ export function VisaoGeralView({ periodo }: { periodo: Periodo }) {
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
         <ChartCard
-          title="DRE — resultado"
+          title="DRE e resultado"
           subtitle="Receita, custo e lucro por mês"
           className="lg:col-span-4"
           legend={dreSeries}

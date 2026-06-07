@@ -40,7 +40,7 @@ export const sectors = [
     score: "3,95",
     headline: "Recupere o faturamento que o no-show leva embora",
     angle:
-      "No-show, ocupação de agenda e margem por especialidade — o ROI mais fácil de provar.",
+      "No-show, ocupação de agenda e margem por especialidade. O ROI mais fácil de provar.",
     proof: "No-show consome 15-30% do faturamento",
     systems: ["iClinic", "Clinicorp"],
   },

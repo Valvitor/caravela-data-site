@@ -17,12 +17,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(brand.url),
   title: {
-    default: `${brand.name} — ${brand.tagline}`,
+    default: `${brand.name} · ${brand.tagline}`,
     template: `%s · ${brand.name}`,
   },
   description: brand.description,
   openGraph: {
-    title: `${brand.name} — ${brand.tagline}`,
+    title: `${brand.name} · ${brand.tagline}`,
     description: brand.description,
     type: "website",
     locale: "pt_BR",

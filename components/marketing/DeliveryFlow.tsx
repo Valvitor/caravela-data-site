@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 const steps = [
   { n: "01", title: "Diagnóstico", body: "Mapeamos suas fontes, dores e a métrica que mais importa para a decisão." },
   { n: "02", title: "Proposta", body: "Escopo claro: o ganho esperado, o setup e a mensalidade, em 1 página." },
-  { n: "03", title: "Construção", body: "Conectamos os dados e montamos o painel com a sua marca — em dias." },
+  { n: "03", title: "Construção", body: "Conectamos os dados e montamos o painel com a sua marca, em dias." },
   { n: "04", title: "Produção", body: "O painel vai ao ar e passa a se atualizar sozinho, todos os dias." },
   { n: "05", title: "Sustentação", body: "Suporte, novas visões e uma reunião mensal de leitura dos seus dados." },
 ];

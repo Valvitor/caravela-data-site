@@ -17,7 +17,7 @@ export function MarketStats() {
           A maioria das PMEs ainda decide no escuro.
         </h2>
         <p className="mt-4 text-white/70">
-          Não falta dado — falta organização e leitura. É exatamente essa lacuna que a Caravela
+          Não falta dado, falta organização e leitura. É exatamente essa lacuna que a Caravela
           resolve.
         </p>
       </div>

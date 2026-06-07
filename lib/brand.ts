@@ -8,7 +8,7 @@ export const brand = {
   name: "Caravela Data",
   tagline: "Dashboards de gestão para PMEs",
   description:
-    "Painéis de gestão sob medida, construídos em código e atualizados sozinhos. Entregues por quem entende do seu setor — sem licença por usuário e com a sua marca.",
+    "Painéis de gestão sob medida, construídos em código e atualizados sozinhos. Entregues por quem entende do seu setor, sem licença por usuário e com a sua marca.",
   url: "https://caravela.data",
   whatsappNumber: WHATSAPP_NUMBER,
   whatsappLink: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,

@@ -31,7 +31,7 @@ const tiers = [
   },
   {
     name: "Dedicado",
-    para: "Quem tem dados no centro da operação — ou revende.",
+    para: "Quem tem dados no centro da operação, ou revende.",
     inclui: [
       "Fontes complexas sob medida",
       "Painéis ilimitados",
@@ -67,7 +67,7 @@ export function PricingBand() {
           Tem um plano pro seu momento.
         </h2>
         <p className="mt-4 text-muted">
-          A mensalidade é por painel — <strong className="font-semibold text-ink">nunca por usuário</strong>:
+          A mensalidade é por painel, <strong className="font-semibold text-ink">nunca por usuário</strong>:
           a equipe inteira acessa sem o custo subir. O investimento é definido num diagnóstico
           rápido, sem compromisso.
         </p>
@@ -115,7 +115,7 @@ export function PricingBand() {
         <Button href={brand.whatsappLink} external size="lg">
           Pedir proposta
         </Button>
-        <span className="text-sm text-muted">Sem compromisso — a gente desenha o seu no diagnóstico.</span>
+        <span className="text-sm text-muted">Sem compromisso, a gente desenha o seu no diagnóstico.</span>
       </div>
     </Section>
   );

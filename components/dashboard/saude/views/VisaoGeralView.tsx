@@ -42,7 +42,7 @@ export function VisaoGeralView({ periodo }: { periodo: Periodo }) {
 
         <ChartCard
           title="Taxa de no-show"
-          subtitle="Faixa em destaque: 15–30% (típica do setor)"
+          subtitle="Faixa em destaque: 15-30% (típica do setor)"
           className="lg:col-span-4"
           legend={noShowSeries}
           summary="Linha do no-show mensal, em queda, saindo da faixa de risco de 15 a 30%."

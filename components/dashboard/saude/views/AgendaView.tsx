@@ -17,7 +17,7 @@ export function AgendaView({ periodo, profissional }: { periodo: Periodo; profis
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
         <ChartCard
           title="Taxa de no-show"
-          subtitle="Faixa em destaque: 15–30%"
+          subtitle="Faixa em destaque: 15-30%"
           className="lg:col-span-4"
           legend={noShowSeries}
           summary="Linha do no-show mensal ao longo do período, com a faixa de risco de 15 a 30%."

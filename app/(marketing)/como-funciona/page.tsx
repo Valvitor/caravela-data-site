@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const entregaveis = [
   { t: "Painel com a sua marca", d: "Hospedado, acessível por link e responsivo no celular. White-label de verdade." },
-  { t: "Conexão automática das fontes", d: "ERP, plataforma de vendas, planilhas e mídia — coletados e atualizados sozinhos." },
+  { t: "Conexão automática das fontes", d: "ERP, plataforma de vendas, planilhas e mídia, coletados e atualizados sozinhos." },
   { t: "KPIs do seu setor", d: "As métricas que importam para a sua decisão, não um modelo genérico." },
   { t: "Acesso para toda a equipe", d: "Sem custo por usuário. Quem precisar olhar, olha." },
   { t: "Suporte e novas visões", d: "Ajustes e novos gráficos conforme o negócio evolui." },
@@ -26,7 +26,7 @@ export default function ComoFuncionaPage() {
       <PageHeader
         eyebrow="Como funciona"
         title="Você não opera nada. A gente cuida do dado de ponta a ponta."
-        lead="Da primeira conversa ao painel rodando sozinho, em poucos passos — e com acompanhamento mensal depois."
+        lead="Da primeira conversa ao painel rodando sozinho, em poucos passos, com acompanhamento mensal depois."
       />
       <DeliveryFlow />
       <Section>

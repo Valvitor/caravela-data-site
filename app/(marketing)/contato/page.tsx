@@ -28,7 +28,7 @@ export default function ContatoPage() {
           <div className="rounded-3xl border border-indigo/25 bg-indigo-soft/60 p-8 md:p-10">
             <h2 className="font-display text-2xl font-semibold text-ink">Falar agora</h2>
             <p className="mt-2 text-muted">
-              Resposta direta com quem constrói os painéis — atendimento 1:1.
+              Resposta direta com quem constrói os painéis. Atendimento 1:1.
             </p>
             <div className="mt-6">
               <Button href={brand.whatsappLink} external size="lg">

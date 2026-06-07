@@ -38,7 +38,7 @@ export function MobileNotice() {
       </svg>
       <p className="text-sm text-ink">
         <span className="font-semibold">Melhor no computador.</span> Dá para navegar pelo painel
-        aqui, mas a experiência completa — com os gráficos lado a lado — fica melhor numa tela maior.
+        aqui, mas a experiência completa, com os gráficos lado a lado, fica melhor numa tela maior.
       </p>
       <button
         type="button"

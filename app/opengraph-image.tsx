@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { brand } from "@/lib/brand";
 
-export const alt = `${brand.name} — ${brand.tagline}`;
+export const alt = `${brand.name} · ${brand.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
             <div style={{ color: "#3730a3" }}>Decisões que não esperam o fim do mês.</div>
           </div>
           <div style={{ fontSize: 28, color: "#6b6862", maxWidth: 880 }}>
-            Dashboards de gestão sob medida para PMEs — com a sua marca e sem licença por usuário.
+            Dashboards de gestão sob medida para PMEs, com a sua marca e sem licença por usuário.
           </div>
         </div>
 

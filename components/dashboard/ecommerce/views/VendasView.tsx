@@ -11,7 +11,7 @@ import { kpisVendas, serieCanal, serieCanalSeries, slicePeriod, type Periodo } f
 export function VendasView({ periodo, canal }: { periodo: Periodo; canal: string }) {
   const participacao = canaisDetalhe.map((r) => ({ name: String(r.canal), value: Number(r.receita) }));
   const ticketCanal = canaisDetalhe.map((r) => ({ name: String(r.canal), value: Number(r.ticket) }));
-  const tituloSerie = canal === "todos" ? "Receita por mês (todos os canais)" : `Receita — ${canal}`;
+  const tituloSerie = canal === "todos" ? "Receita por mês (todos os canais)" : `Receita: ${canal}`;
 
   return (
     <div className="space-y-6">
