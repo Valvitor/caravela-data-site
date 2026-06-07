@@ -13,7 +13,6 @@ export const brand = {
   whatsappNumber: WHATSAPP_NUMBER,
   whatsappLink: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
   whatsappDisplay: "(71) 9 8694-4653",
-  email: "contato@caravela.data",
   // Cores de série para os gráficos (espelham os tokens do tema)
   series: {
     indigo: "#3730a3",

@@ -35,12 +35,7 @@ export default function ContatoPage() {
                 WhatsApp · {brand.whatsappDisplay}
               </Button>
             </div>
-            <p className="mt-4 text-sm text-faint">
-              Prefere e-mail?{" "}
-              <a href={`mailto:${brand.email}`} className="font-medium text-indigo hover:underline">
-                {brand.email}
-              </a>
-            </p>
+            <p className="mt-4 text-sm text-faint">Atendimento direto, de segunda a sexta.</p>
           </div>
 
           <div>
