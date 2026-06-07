@@ -2,6 +2,7 @@ import Link from "next/link";
 import { brand } from "@/lib/brand";
 import { DemoBadge } from "@/components/dashboard/DemoBadge";
 import { SectorSwitcher } from "@/components/dashboard/SectorSwitcher";
+import { MobileNotice } from "@/components/dashboard/MobileNotice";
 
 export default function DashboardsLayout({
   children,
@@ -26,7 +27,10 @@ export default function DashboardsLayout({
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">{children}</main>
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+        <MobileNotice />
+        {children}
+      </main>
 
       <footer className="border-t border-line">
         <div className="mx-auto max-w-7xl px-4 py-6 text-xs text-muted sm:px-6">
